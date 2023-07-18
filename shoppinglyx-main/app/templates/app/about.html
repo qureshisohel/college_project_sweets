@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About{% endblock title %}
+{% block banner_slider %}
+<!--Banner Slider-->
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/carousel/mix1.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px"> 
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix2.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix3.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix4.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+{% block main-content %}
+<div class="container mt-3">
+    <h2 class="text-center">About Us</h2>
+    <br>
+    <div class="row container">
+        <p class="fs-4 text-center">
+            Murlidhar Sweets is a popular sweets and snack shop based in Mumbai, India. The business was founded in 1950 by Late Shri Ramlalji Agrawal and has since then been serving customers with a wide range of traditional Indian sweets and snacks.
+
+            Murlidhar Sweets is known for its high-quality and delicious sweets, made from the finest ingredients and using traditional methods of preparation. Their menu includes a wide variety of sweets such as Gulab Jamun, Rasgulla, Ladoo, Barfi, Halwa, and many more.
+            
+              </p>
+    </div>
+    <h2 class="text-center">Mission </h2>
+    <br>
+    <div class="row container">
+        <p class="fs-4 text-center">
+  
+            Apart from its physical stores, Murlidhar Sweets also has an online presence, allowing customers to order their favorite sweets and snacks from the comfort of their homes. The business takes pride in its commitment to providing excellent customer service and maintaining the highest standards of hygiene and quality.
+            
+            Over the years, Murlidhar Sweets has built a loyal customer base and has become a household name in Mumbai and other parts of India. Their sweets and snacks are often served at weddings, festivals, and other special occasions, making them a part of many people's cherished memories.
+ 
+        </p>
+    </div>
+</div>
+{% endblock main-content %}

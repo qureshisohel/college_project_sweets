@@ -1,0 +1,88 @@
+<html>
+<head>
+    <style>
+        @page {
+            size: a4 portrait;
+            @frame header_frame {           /* Static Frame */
+                -pdf-frame-content: header_content;
+                left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+            }
+            @frame content_frame {          /* Content Frame */
+                left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+            }
+            @frame footer_frame {           /* Another static Frame */
+                -pdf-frame-content: footer_content;
+                left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+            }
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+    
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+    
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+    
+      /* Style the product image */
+      .product-image {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: 10px;
+      }
+    </style>
+    </head>
+    
+    <body>
+        <!-- Content for Static Frame 'header_frame' -->
+        <div id="header_content">
+         <h3>Murlidhar Sweets</h3>
+        </div>
+    
+        <!-- Content for Static Frame 'footer_frame' -->
+        <div id="footer_content">(c) - page <pdf:pagenumber>
+            of <pdf:pagecount>
+        </div>
+    
+        <!-- HTML Content -->
+    <h1>Products Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Selling Price</th>
+                <th>Discounted Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for products in product %}
+            <tr>
+                <td>{{products.title}}</td>
+                <td>{{products.selling_price}}</td>
+                <td>{{products.discounted_price}}</td>
+                <td>{{products.description}}</td>
+                <td>{{products.category}}</td>
+                <td><img src="{{products.product_image.path}}"/></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    
+    
+    </table>
+    </body>
+</html>

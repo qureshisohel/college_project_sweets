@@ -1,0 +1,186 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+<!---->
+{% comment "" %}
+{% block hero %}
+<!-- Hero -->
+<div class="p-5 text-center bg-image rounded-3" style="
+    background-image: url('static/app/images/bg.png');
+    height: 100vh ;
+  ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">One Stop Sweet Spot</h1>
+        <h4 class="mb-3">Murlidhar Sweets</h4>
+        <a class="btn btn-outline-light btn-lg" href="/" role="button">Shop</a>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!-- Hero -->
+{% endblock hero %}-->
+{% endcomment %}
+{% block banner_slider %}
+<!--Banner Slider-->
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/carousel/mix1.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px"> 
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix2.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix3.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/carousel/mix4.jpg' %}" class="d-block w-100" alt="..." width="300px" height="500px">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+{% comment "" %}{% endcomment %}
+{% block livesale %}
+<!-- Live Sale Section -->
+<div class="container">
+  <div class="row bg-danger text-center p-5 text-white border-bottom shadow">
+    <h1>SALE IS LIVE NOW</h1>
+    <span>5% Instant Discount on Axis Bank Credit and Debit Card</span>
+    <small class="fw-lighter">Term and Condition Applied (For details visit Bank's official Website)</small>
+  </div>
+</div> 
+<!-- End Live Sale Section -->
+{% endblock livesale %}
+{% block main-content %}
+<!-- 1st Product Slider -->
+
+<!-- End 1st Product Slider -->
+{% comment "" %}
+<!-- Payment Info Section -->
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+<!-- End Payment Info Section -->
+{% endcomment %}
+<!-- 2nd Product Slider -->
+
+<!-- End 2nd Product Slider -->
+
+
+<!-- 3rd Product Slider -->
+<div class="mx-3">
+  <h2>Peda</h2>
+  <!-- Slider 3 -->
+  <div class="owl-carousel" id="slider1">
+   {% for p in peda %}
+   <a href="{% url 'product-detail' p.id %}" class="btn"><div class="item"><img src="{{p.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{p.title}}</span><br><span class="fs-5">Rs. {{ p.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ 
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Halwa</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider2">
+   {% for h in halwa %}
+   <a href="{% url 'product-detail' h.id %}" class="btn"><div class="item"><img src="{{h.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{h.title}}</span><br><span class="fs-5">Rs. {{ h.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ 
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Shrikhand</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider3">
+   {% for s in shrikhand %}
+   <a href="{% url 'product-detail' s.id %}" class="btn"><div class="item"><img src="{{s.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{s.title}}</span><br><span class="fs-5">Rs. {{ s.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ 
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Sugar Free</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider2">
+   {% for sf in sugarfree %}
+   <a href="{% url 'product-detail' sf.id %}" class="btn"><div class="item"><img src="{{sf.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{sf.title}}</span><br><span class="fs-5">Rs. {{ sf.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ <div class="mx-3">
+  <h2>Dry Fruits</h2>
+  <!-- Slider 3 -->
+  <div class="owl-carousel" id="slider2">
+   {% for df in dryfruit %}
+   <a href="{% url 'product-detail' df.id %}" class="btn"><div class="item"><img src="{{df.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{df.title}}</span><br><span class="fs-5">Rs. {{ df.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Bengali Sweets</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider2">
+   {% for bs in bengalisweets %}
+   <a href="{% url 'product-detail' bs.id %}" class="btn"><div class="item"><img src="{{bs.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{bs.title}}</span><br><span class="fs-5">Rs. {{ bs.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ 
+
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+  <h2>Natural Sweets</h2>
+  <!-- Slider 2 -->
+  <div class="owl-carousel" id="slider2">
+   {% for ns in naturalsweets %}
+   <a href="{% url 'product-detail' ns.id %}" class="btn"><div class="item"><img src="{{ns.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{ns.title}}</span><br><span class="fs-5">Rs. {{ ns.discounted_price }}</span></div>
+     {% endfor %}</a>
+ </div>
+ <!-- End 2nd Product Slider -->
+ {% endblock main-content %}
+ 
